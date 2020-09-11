@@ -10,7 +10,9 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export default function Home(props) {
-    const {samples, removeSample, addSample} = useContext(SampleContext);
+    const {samples, dispatch} = useContext(SampleContext);
+    //dispatch use case: 
+    // dispatch({type: ADD_SAMPLE, sample: {name: 'sample'}})
     const classes = useStyles();
     return(
         <h1 className={classes.root}>{samples[0].name}</h1>
